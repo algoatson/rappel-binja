@@ -1,18 +1,8 @@
-import asyncio
-import logging
 import os
 import sys
 import types
-import threading
-import signal
-import ctypes
 import subprocess
 import re
-
-from typing import Optional
-from concurrent.futures import ThreadPoolExecutor
-
-import qasync
 
 import binaryninja as bn
 
@@ -89,7 +79,7 @@ class RappelWidget(GlobalAreaWidget):
 
         self.process.readyReadStandardOutput.connect(self.on_ready_read)
         self.process.readyReadStandardError.connect(self.on_ready_read)
-        self.process.start("/tmp/rappel-binja/bin/rappel")
+        self.process.start("rappel")
 
         if not self.process.waitForStarted():
             self.console_output.appendPlainText("Error: process did not start successfully.")
