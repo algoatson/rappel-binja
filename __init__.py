@@ -86,7 +86,7 @@ class RappelWidget(GlobalAreaWidget):
             log_info("Rappel failed to start.")
             exit(-1)
 
-        self.console_output.appendPlainText("Rappel started successfully.")
+        # self.console_output.appendPlainText("Rappel started successfully.")
         log_info("Rappel started successfully.")
 
 
@@ -105,10 +105,11 @@ class RappelWidget(GlobalAreaWidget):
 
     def send_input(self):
         command = self.console_input.text()
-        self.process.write(command.encode('utf-8') + b"\n")
-        # clear both input and output.
-        self.console_input.clear()
-        self.console_output.clear()
+        if command:
+            self.process.write(command.encode('utf-8') + b"\n")
+            # clear both input and output.
+            self.console_input.clear()
+            self.console_output.clear()
 
 GlobalArea.addWidget(
     lambda _: RappelWidget('Rappel Console')
