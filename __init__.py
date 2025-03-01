@@ -16,10 +16,9 @@ import qasync
 
 import binaryninja as bn
 
-from PySide6.QtCore import QEvent, Qt, QThread, Signal, Slot, QProcess
+from PySide6.QtCore import QEvent, Qt, QThread, QProcess
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QPlainTextEdit, QLineEdit, QPushButton, QHBoxLayout, QLabel
 from binaryninjaui import GlobalAreaWidget, GlobalArea
-from binaryninja import PluginCommand, BinaryView
 from binaryninja.log import log_info
 
 # Hack required for bundled PySide6 to work with QtPy
@@ -124,8 +123,3 @@ class RappelWidget(GlobalAreaWidget):
 GlobalArea.addWidget(
     lambda _: RappelWidget('Rappel Console')
 )
-
-def test_func(bv: BinaryView):
-    log_info("hello, world!")
-
-PluginCommand.register("Open Rappel", "Useless Description", test_func, True)
