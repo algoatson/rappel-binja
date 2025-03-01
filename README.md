@@ -1,6 +1,8 @@
 # rappel-binja
 rappel-binja is a plugin for binary-ninja that brings rappel in it's very own widget on the UI, and this automatically. It was designed to enhance interactive static reverse-engineering and assembly analysis.
 
+![rappel-binja](resources/image.png)
+
 > Rappel is a pretty janky assembly REPL. It works by creating a shell ELF, starting it under ptrace, then continiously rewriting/running the .text section, while showing the register states. It's maybe half done right now, and supports Linux x86, amd64, armv7 (no thumb), and armv8 at the moment.
 
 The plugin is still in very-early stage of development, but for now I consider it working and suitable for use.
