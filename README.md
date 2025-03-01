@@ -8,7 +8,7 @@ The plugin is still in very-early stage of development, but for now I consider i
 There's one slightly issue at the moment, for the plugin to work you need a special build of rappel, this is because rappel buffering will cause our process to hang forever (waiting for input or to send output) without the fork I provide.
 
 ## Build and Install Rappel
-The only dependency is an assembler (`nasm` on x86/amd64, `as` n ARM), which on debian can be installed with the `nasm`/`binutils` packages.
+The only dependency is an assembler (`nasm` on x86/amd64, `as` on ARM), which on debian can be installed with the `nasm`/`binutils` packages.
 
 First clone the repo:
 ```
